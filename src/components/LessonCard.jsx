@@ -76,7 +76,7 @@ export default function LessonCard({ title, description, chip, dueDate, variant 
         </div>
         <div className="card-meta">
           <span className="chip">{chip}</span>
-          <span className="due-date">Due Date: {dueDate}</span>
+          <span className="due-date">{`Due Date: ${dueDate}`}</span>
         </div>
       </div>
     </article>

@@ -1,4 +1,4 @@
-import LessonCard from "./LessonCard.jsx";
+import LessonCard from "./components/LessonCard.jsx";
 
 export default function App() {
   return (
