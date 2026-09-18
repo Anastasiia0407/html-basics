@@ -42,7 +42,7 @@ const COVERS = {
   },
 };
 
-export default function LessonCard({ title, description, chip, dueDate, variant }) {
+export default function LessonCard({ title, description, chip, dueDate, variant, price = "Free" }) {
   const cover = COVERS[variant];
 
   return (
@@ -76,6 +76,7 @@ export default function LessonCard({ title, description, chip, dueDate, variant 
         </div>
         <div className="card-meta">
           <span className="chip">{chip}</span>
+          <span className="due-date">{price}</span>
           <span className="due-date">{`Due Date: ${dueDate}`}</span>
         </div>
       </div>
