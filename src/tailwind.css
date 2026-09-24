@@ -1,8 +1,12 @@
 /* Tailwind entry. Preflight is intentionally NOT imported: the base reset would
    override style.css (buttons, margins, default font). Utilities only. */
-@layer theme, base, components, utilities;
+@layer theme, base, components, app, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
+/* style.css is imported into the `app` layer (the file itself stays untouched)
+   so utilities can win over it: otherwise the global reset defeats the
+   padding and margin utilities. */
+@import "../style.css" layer(app);
 
 /* importing the sub-files directly skips automatic source detection */
 @source "../index.html";
@@ -30,4 +34,6 @@
   /* type */
   --font-sans: var(--font-ui);
   --font-mono: var(--font-code);
+  /* text-sm inherits our 12px from :root; pair it with our 18px leading */
+  --text-sm--line-height: var(--leading-sm);
 }
