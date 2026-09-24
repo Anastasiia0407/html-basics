@@ -45,11 +45,19 @@ const COVERS = {
   },
 };
 
-export default function LessonCard({ title, description, chip, dueDate, variant, price = "Free" }) {
+export default function LessonCard({
+  title,
+  description,
+  chip,
+  dueDate,
+  variant,
+  price = "Free",
+  isDone = false,
+}) {
   const cover = COVERS[variant];
 
   return (
-    <article className="card">
+    <article className={isDone ? "card card-done" : "card"}>
       <div className={`card-cover cover-${variant}`} role="img" aria-label={cover.label}>
         <div className="cover-title">
           <span className={cover.wordClass}>{cover.word}</span>
@@ -78,7 +86,7 @@ export default function LessonCard({ title, description, chip, dueDate, variant,
           <p className="card-description">{description}</p>
         </div>
         <div className="card-meta">
-          <Chip label={chip} />
+          <Chip label={isDone ? "Done" : chip} />
           <span className="due-date">{price}</span>
           <span className="due-date">{`Due Date: ${dueDate}`}</span>
         </div>

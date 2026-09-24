@@ -10,6 +10,7 @@ export default function App() {
           description="Learn the building blocks of the web with HTML. This lesson covers elements, attributes, and how to structure a webpage from scratch."
           chip="Code"
           dueDate="Sep 1"
+          isDone
         />
         <LessonCard
           variant="css"
