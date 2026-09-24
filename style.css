@@ -2,24 +2,40 @@
    Design tokens — витягнуті з Figma (Systemizer)
    ============================================ */
 :root {
+  /* ---- primitives: raw values, scale names ---- */
+  --white: #ffffff;
+  --gray-900: #1a1a1a;
+  --gray-700: #575757;
+  --gray-500: #a4a2a2;
+  --gray-100: #f5f5f5;
+  --gray-50: #fafafa;
+  --pink-800: #a62e60;
+  --pink-700: #bd3770;
+  --pink-50: #fff0f6;
+  --black-alpha-05: rgba(0, 0, 0, 0.05);
+
   /* text */
-  --text-primary: #1a1a1a;
-  --text-secondary: #575757;
-  --text-tertiary: #a4a2a2;
-  --text-on-pink: #bd3770;
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-700);
+  --text-tertiary: var(--gray-500);
+  --text-on-pink: var(--pink-700);
+
+  /* accent */
+  --accent-primary: var(--pink-700);
+  --accent-primary-hover: var(--pink-800);
+  --accent-info-pink: var(--pink-50);
 
   /* surfaces */
-  --bg-page: #fafafa;
-  --bg-primary: #ffffff;
-  --accent-info-pink: #fff0f6;
-  --border-subtle: #f5f5f5;
+  --bg-page: var(--gray-50);
+  --bg-primary: var(--white);
+  --border-subtle: var(--gray-100);
 
   /* card geometry */
   --card-width: 274px;
   --card-radius: 16px;
   --card-padding: 16px;
   --cover-radius: 10px;
-  --card-shadow: 0 2px 7.5px rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 2px 7.5px var(--black-alpha-05);
 
   /* type */
   --font-ui: "Manrope", sans-serif;
@@ -271,15 +287,15 @@ main {
   font-family: var(--font-ui);
   font-size: 12px;
   line-height: 18px;
-  color: #ffffff;
-  background-color: #be3770;
-  border: 1px solid #be3770;
+  color: var(--white);
+  background-color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #a62e60;
-  border-color: #a62e60;
+  background-color: var(--accent-primary-hover);
+  border-color: var(--accent-primary-hover);
 }
