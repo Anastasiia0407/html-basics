@@ -1,3 +1,4 @@
+import Button from "../Button.jsx";
 import Chip from "../Chip.jsx";
 
 // Cover details that differ per variant (kept internal — not part of the props API)
@@ -81,6 +82,7 @@ export default function LessonCard({ title, description, chip, dueDate, variant,
           <span className="due-date">{price}</span>
           <span className="due-date">{`Due Date: ${dueDate}`}</span>
         </div>
+        <Button>Start lesson</Button>
       </div>
     </article>
   );

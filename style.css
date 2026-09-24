@@ -260,3 +260,22 @@ main {
   line-height: 18px;
   color: var(--text-tertiary);
 }
+
+/* --- action --- */
+.button {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  background-color: #be3770;
+  border: 1px solid #be3770;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #a62e60;
+  border-color: #a62e60;
+}
