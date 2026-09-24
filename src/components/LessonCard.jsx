@@ -1,3 +1,5 @@
+import Chip from "../Chip.jsx";
+
 // Cover details that differ per variant (kept internal — not part of the props API)
 const COVERS = {
   html: {
@@ -75,7 +77,7 @@ export default function LessonCard({ title, description, chip, dueDate, variant,
           <p className="card-description">{description}</p>
         </div>
         <div className="card-meta">
-          <span className="chip">{chip}</span>
+          <Chip label={chip} />
           <span className="due-date">{price}</span>
           <span className="due-date">{`Due Date: ${dueDate}`}</span>
         </div>
