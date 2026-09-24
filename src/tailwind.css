@@ -1,0 +1,33 @@
+/* Tailwind entry. Preflight is intentionally NOT imported: the base reset would
+   override style.css (buttons, margins, default font). Utilities only. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* importing the sub-files directly skips automatic source detection */
+@source "../index.html";
+@source "./**/*.{js,jsx}";
+
+/* Theme mapped onto the primitives declared in style.css :root.
+   `inline` keeps the var() references instead of re-declaring the values. */
+@theme inline {
+  /* drop Tailwind's stock palette — only our scale exists */
+  --color-*: initial;
+
+  --color-white: var(--white);
+  --color-gray-900: var(--gray-900);
+  --color-gray-700: var(--gray-700);
+  --color-gray-500: var(--gray-500);
+  --color-gray-100: var(--gray-100);
+  --color-gray-50: var(--gray-50);
+  --color-pink-800: var(--pink-800);
+  --color-pink-700: var(--pink-700);
+  --color-pink-50: var(--pink-50);
+
+  /* spacing: every step derives from --space-1 (4px) */
+  --spacing: var(--space-1);
+
+  /* type */
+  --font-sans: var(--font-ui);
+  --font-mono: var(--font-code);
+}
