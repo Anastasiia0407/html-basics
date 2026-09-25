@@ -23,6 +23,10 @@
   --pink-500: #d9538a;
   --pink-200: #f5b8d0;
 
+  /* ---- primitives: radius (named off the 4px scale, so the name does not
+     collide with Tailwind's --radius-* utility namespace) ---- */
+  --radius-2: 8px;
+
   /* ---- primitives: spacing (4px scale) ---- */
   --space-0-5: 2px;
   --space-1: 4px;

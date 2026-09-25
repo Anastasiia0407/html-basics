@@ -7,6 +7,10 @@
    so utilities can win over it: otherwise the global reset defeats the
    padding and margin utilities. */
 @import "../style.css" layer(app);
+@import "./shadcn-bridge.css" layer(app);
+
+/* our theme toggles on a .dark class, not prefers-color-scheme */
+@custom-variant dark (&:is(.dark *));
 
 /* importing the sub-files directly skips automatic source detection */
 @source "../index.html";
@@ -27,6 +31,32 @@
   --color-pink-800: var(--pink-800);
   --color-pink-700: var(--pink-700);
   --color-pink-50: var(--pink-50);
+
+  /* shadcn semantic colors — see shadcn-bridge.css for what they point at */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* radius scale derived from --radius (shadcn's convention: lg == --radius,
+     which keeps rounded-lg at our existing 8px) */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
   /* spacing: every step derives from --space-1 (4px) */
   --spacing: var(--space-1);

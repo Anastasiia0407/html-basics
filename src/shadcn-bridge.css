@@ -1,0 +1,38 @@
+/* shadcn/ui semantic variables, mapped onto our own semantic tokens.
+   No second palette: every value below points at a token from style.css,
+   so our .dark block drives shadcn's dark theme too — no separate
+   .dark section is needed here. */
+:root {
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+
+  --card: var(--bg-primary);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-primary);
+  --popover-foreground: var(--text-primary);
+
+  --primary: var(--accent-primary);
+  --primary-foreground: var(--white);
+
+  --secondary: var(--accent-info-pink);
+  --secondary-foreground: var(--text-on-pink);
+  --accent: var(--accent-info-pink);
+  --accent-foreground: var(--text-on-pink);
+
+  --muted: var(--border-subtle);
+  --muted-foreground: var(--text-tertiary);
+
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--accent-primary);
+
+  --radius: var(--radius-2);
+}
+
+/* Preflight is intentionally not loaded, so UA button styles would squash
+   Radix's <button>-based controls. Scoped reset instead of a global one. */
+[data-slot="switch"] {
+  padding: 0;
+  border-style: solid;
+  font: inherit;
+}
